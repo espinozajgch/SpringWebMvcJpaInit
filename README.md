@@ -1,6 +1,6 @@
 El servicio utiliza una conexion a base de datos PostgreSQL,
 los parametros de dicha conexion se encuentran en el archivo de configuraicon
-### `application.properties` ubicado en la carpeta "resources".
+`application.properties` ubicado en la carpeta `resources`.
 
 En la base de datos debe exister una tabla llamada Persona, esta sera
 en la cual se almacenaran los datos a mostrar por el servicio, los campos
