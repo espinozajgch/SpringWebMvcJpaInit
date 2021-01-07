@@ -6,7 +6,7 @@ es necesario tener instalado `docker`
 En la base de datos se creara una tabla llamada persona con unos registros 
 de prueba, dichos registros estan en el archivo `init.sql`
 
-Luego se debe ejecutar el servicio ejecutando mvn clean install para la compilacion
+Luego se debe ejecutar el servicio ejecutando `mvn clean install` para la compilacion
 del proyecto y luego desplegar el .jar creado en la carpeta `target`
 con el comando `java -jar`
 
