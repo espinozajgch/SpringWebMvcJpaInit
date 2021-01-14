@@ -1,5 +1,7 @@
-El servicio utiliza una base de datos PostgreSQL,
-para lo cual se implemento docker-compose para crear una base de datos local,
+## Proyecto Spring Boot con un Modelo MVC y JPA
+
+El servicio utiliza una base de datos `PostgreSQL`,
+para lo cual se implemento `docker-compose` para crear una base de datos local,
 se debe ejecutar el comando `docker-compose up` para la creacion de la base de datos.
 es necesario tener instalado `docker` 
 
