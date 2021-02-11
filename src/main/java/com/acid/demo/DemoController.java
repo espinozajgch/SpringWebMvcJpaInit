@@ -19,7 +19,7 @@ import javax.validation.constraints.Pattern;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-@Controller
+@RestController
 public class DemoController {
     private static final Logger LOGGER = LoggerFactory.getLogger(DemoController.class);
 
@@ -35,6 +35,12 @@ public class DemoController {
             @RequestParam(value = "rut", defaultValue = "0") String rut_input){
 
         return new ResponseEntity<>(service.searchByRut(rut_input).toString(), HttpStatus.OK);
+    }
+
+    @CrossOrigin
+    @RequestMapping(value="/")
+    public String home(){
+        return "hola mundo";
     }
 
     @CrossOrigin
