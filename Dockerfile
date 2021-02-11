@@ -1,12 +1,10 @@
-FROM openjdk:8
-
-#FROM openjdk:8-jdk-alpine
+FROM openjdk:8-jdk-alpine
 
 #RUN apt-get update && apt-get install -y maven
 
 #COPY . /project
 
-#RUN  cd /project && mvn package
+#RUN  cd /project && mvn package -DskipTests
 
 # Add a volume pointing to /tmp
 #VOLUME /tmp
@@ -29,8 +27,6 @@ ARG JAR_FILE=/target/demo.jar
 
 # Add the application's jar to the container
 #ADD ${JAR_FILE} app.jar
-
-#ARG JAR_FILE=*.jar
 COPY ${JAR_FILE} application.jar
 ENTRYPOINT ["java", "-jar", "application.jar"]
 
