@@ -1,4 +1,4 @@
-package com.acid.demo;
+package com.myhotel.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

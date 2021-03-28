@@ -1,4 +1,4 @@
-package com.acid.demo;
+package com.myhotel.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
