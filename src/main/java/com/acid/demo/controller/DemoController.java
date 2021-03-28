@@ -1,23 +1,16 @@
-package com.acid.demo;
+package com.acid.demo.controller;
 
-import com.acid.demo.model.Persona;
-import com.acid.demo.repo.IPersonaRepo;
 import com.acid.demo.service.PersonaServiceImpl;
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Pattern;
-import java.util.LinkedHashMap;
-import java.util.List;
 
 @RestController
 public class DemoController {

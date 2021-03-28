@@ -1,17 +1,14 @@
 package com.acid.demo.service;
 
-import com.acid.demo.DemoController;
+import com.acid.demo.controller.DemoController;
 import com.acid.demo.model.Persona;
 import com.acid.demo.repo.IPersonaRepo;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
