@@ -1,31 +1,37 @@
-## Proyecto Spring Boot con un Modelo MVC y JPA
+## Proyecto Spring Boot con JPA
 
-El servicio utiliza una base de datos `PostgreSQL`,
-para lo cual se implemento `docker-compose` para crear una base de datos local,
-es necesario tener instalado `docker`, 
-
-Before we can start PostgreSQL with Docker Compose, we need to turn our Spring Boot application into a Docker image.
-The first step is to package the application as a JAR file:
-> mvn clean package -DskipTests
-
-Here, we first clean-up our previous builds before packaging the application. In addition, we skip the tests because they fail without PostgreSQL.
-
-Let's run our Spring Boot application and PostgreSQL with Docker Compose:
-> `docker-compose up`
-
-En la base de datos se creara una tabla llamada persona con unos registros 
-de prueba, dichos registros estan en el archivo `init.sql`
+El servicio se conecta una base de datos `MySQL`, la cual fue otorgada para la prueba
 
 El servicio se desplegara en el puerto 8080, se puede consultar de la sigiente forma:
 
-> `localhost:8080/reverse_rut?rut=26738342-1`
+> `localhost:8080/demo/{problema}/{segmento}`
 
-EL campo `RUT` debera contener los datos sin puntos, solo el guien para separar 
-el digito verificador.
+para los problmeas 1 y 2 el parametro segmento (A,B,C) es un obligatario, no asi para los problemas del 3 al 6
 
-Ejemplo: `26738342-1`
+> 1 : CANTIDAD DE EMPLEADOS CON
+> > A : SALARIO MENOR A 3.500 USD
+> 
+> > B : SALARIO MAYOR O IGUAL A 3.500 Y MENOR QUE 8.000
+>
+> > C : SALARIO MAYOR O IGUAL A 8.000
 
-####Si el rut buscado no es valido como por ejemplo "12345678-9", el serivcio retornara
-####un mensaje de error, debido a que se hace una validacion del mismo y no buscara la informacion en la tabla.
+> 2 : CANTIDAD DE EMPLEADOS POR DEPARTAMENTO CON
+> > A : SALARIO MENOR A 3.500 USD
+>
+> > B : SALARIO MAYOR O IGUAL A 3.500 Y MENOR QUE 8.000
+>
+> > C : SALARIO MAYOR O IGUAL A 8.000
+
+> 3 : INFORMACION DEL EMPLEADO CON MAYOR SUELDO POR DEPARTAMENTO
+
+> 4 : INFORMACION DE LOS GERENTES QUE HAYAN SIDO CONTRATADOS HACE MAS DE 15 AÑOS
+
+> 5 : SALARIO PROMEDIO DE TODOS LOS DEPARTAMENTOS CON MAS DE 10 EMPLEADOS
+
+> 6 : CANTIDAD DE EMPLEADOS, SALARIO PROMEDIO, MAXIMO Y MINIMO, PROMEDIO DE AÑOS DE ANTIGUEDAD POR PAIS
 
 Se utilizo la version 3.6.3 de Apache Maven, 1.8 de Java
+
+docker build -t nyg-frontend .
+Run container
+docker run -d -p 8090:80 --rm nyg-frontend
